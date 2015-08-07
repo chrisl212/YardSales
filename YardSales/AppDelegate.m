@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "ACMapViewController.h"
 
 @implementation AppDelegate
 
@@ -14,6 +15,12 @@
 {
     CGRect applicationFrame = [[UIScreen mainScreen] bounds];
     self.window = [[UIWindow alloc] initWithFrame:applicationFrame];
+    
+    ACMapViewController *mapViewController = [[ACMapViewController alloc] init];
+    
+    UINavigationController *mapNavigationController = [[UINavigationController alloc] initWithRootViewController:mapViewController];
+
+    self.window.rootViewController = mapNavigationController;
     
     [self.window makeKeyAndVisible];
     
